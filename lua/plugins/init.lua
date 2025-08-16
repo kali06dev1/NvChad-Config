@@ -13,6 +13,11 @@ return {
     end,
   },
 
+  {
+    "mattn/emmet-vim",
+    ft = {"html", "heex"}
+  }
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
