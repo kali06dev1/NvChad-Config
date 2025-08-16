@@ -39,6 +39,28 @@ lspconfig.elixirls.setup {
   root_dir = lspconfig.util.root_pattern("mix.exs")
 }
 
+lspconfig.ts_ls.setup {
+  capabilities = capabilities,
+  on_attach = function (client, _bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+
+    -- local buf_map = function (mode, lhs, rhs)
+    --   vim.api.nvim_buf_set_keymap(
+    --     bufnr,
+    --     mode,
+    --     lhs,
+    --     rhs,
+    --     {
+    --       noremap = true,
+    --       silent = true
+    --     }
+    --   )
+    -- end
+  end,
+  filetypes = {"javascript", "javascriptreact"},
+  root_dir = vim.loop.cwd()
+}
+
 local servers = { "html", "cssls" }
 vim.lsp.enable(servers)
 
