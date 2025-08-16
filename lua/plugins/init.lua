@@ -16,6 +16,15 @@ return {
   {
     "mattn/emmet-vim",
     ft = {"html", "heex"}
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      view = {
+        side = "right"
+      }
+    }
   }
 
   -- test new blink

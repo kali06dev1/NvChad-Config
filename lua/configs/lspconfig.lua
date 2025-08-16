@@ -4,6 +4,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup {
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostic = {
@@ -29,6 +30,13 @@ lspconfig.emmet_ls.setup {
     "html",
     "heex"
   }
+}
+
+lspconfig.elixirls.setup {
+  cmd = {vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language-server.sh"},
+  capabilities = capabilities,
+  filetypes = {"elixir", "eelixir", "heex"},
+  root_dir = lspconfig.util.root_pattern("mix.exs")
 }
 
 local servers = { "html", "cssls" }
