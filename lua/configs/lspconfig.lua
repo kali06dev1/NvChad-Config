@@ -28,7 +28,8 @@ lspconfig.emmet_ls.setup {
   capabilities = capabilities,
   filetypes = {
     "html",
-    "heex"
+    "heex",
+    "vue"
   }
 }
 
